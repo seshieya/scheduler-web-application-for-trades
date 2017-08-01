@@ -7,5 +7,5 @@ My current job involves manually creating work schedules in Microsoft Word. Appl
 -	Built function to insert or remove more rows of inputs when user clicks add or delete buttons, and send these additional inputs to be stored to a database.
 
 ## Other main features for the project that I have not yet implemented:
-- Each employee will have a username and login. Schedules can only be created by verified users. Will use Zend Framework's Bcrypt library to store the usernames and passwords.
+- Each employee will have a login. Schedules can only be created by verified users. Will use Zend Framework's Bcrypt library to encrypt usernames and passwords before storing them to the database. 
 - Upon emailing a schedule to a trade, there will be a confirmation button in the email. If the trade clicks on the button, it will open up a browser window and redirect the trade to the Scheduler app, where it will trigger the server to send an email to the employee that created the schedule. The email will indicate that the trade has viewed and confirmed that they will be attending as per the date listed on the schedule.

@@ -1,0 +1,82 @@
+<h1>Schedule Maker</h1>
+<form action="/draft" method="post" id="sc-form">
+    <div class="col-md-4">
+        <label for="sc-job-number">Job Number (enter without dashes):</label>
+        <input  type="text"
+                name="sc-job-number"
+                id="sc-job-number"
+                placeholder="Job Number"
+        />
+    </div>
+    <div class="col-md-4">
+        <label for="sc-job-address">Job Address:</label>
+        <input  type="text"
+                name="sc-job-address"
+                id="sc-job-address"
+                placeholder="Job Address"
+        />
+    </div>
+    <div class="col-md-4">
+        <label for="sc-coordinator">Coordinator:</label>
+        <input  type="text"
+                name="sc-coordinator"
+                id="sc-coordinator"
+                placeholder=""
+        />
+    </div>
+    <div class="col-md-4">
+        <label for="sc-coord-phone">Coordinator Phone:</label>
+        <input  type="text"
+                name="sc-coord-phone"
+                id="sc-coord-phone"
+                placeholder=""
+        />
+
+    </div>
+    <div class="col-md-4">
+        <label for="sc-coord-email">Coordinator Email:</label>
+        <input  type="text"
+                name="sc-coord-email"
+                id="sc-coord-email"
+                placeholder=""
+        />
+
+    </div>
+    <div class="col-md-4">
+        <label for="sc-job-access" class="align-top">Job Access:</label>
+        <textarea name="sc-job-access"
+                  id="sc-job-access"
+                  placeholder=""
+        ></textarea>
+    </div>
+
+
+    <hr />
+
+    <div class="col-md-12">
+        <label for="sc-startdate">Schedule Start Date:</label>
+        <input  type="text"
+                name="sc-startdate"
+                id="sc-startdate"
+                placeholder=""
+        />
+    </div>
+
+    <hr />
+
+
+    <div id="sc-rows-container">
+
+    </div>
+
+    <input  type="button"
+            value="Add row"
+            id="sc-addrows"/>
+
+
+    <hr />
+    <input  type="submit"
+            value="Save & Continue"
+            id="sc-submit" />
+
+</form>

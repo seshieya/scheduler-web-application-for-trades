@@ -1,0 +1,96 @@
+    <h1>Schedule Maker</h1>
+
+    <form method="post" action="/save">
+
+    <table id="sc-table-job">
+        <thead>
+        <tr>
+            <th>Job Number</th>
+            <th>Address</th>
+            <th>Access</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+                 echo "<tr>
+                    <td><input type='text' name='sc-job-number' id='sc-job-number' value='" . $this->job['sc-job-number'] . "' /></td>
+                    <td><input type='text' name='sc-job-address' id='sc-job-address' value='" . $this->job['sc-job-address'] . "' /></td>
+                    <td><textarea name='sc-job-access' id='sc-job-access'>" . $this->job['sc-job-access'] . "</textarea></td>
+                  </tr>";
+        ?>
+        </tbody>
+
+    </table>
+
+
+
+    <table id="sc-table-row">
+        <tr>
+            <th>Type of Work</th>
+            <th>Trade</th>
+            <th>Trade Email</th>
+            <th>Date In</th>
+            <th>Date Out</th>
+            <th>Comments</th>
+        </tr>
+
+        <?php
+
+        $rowNum = 1;
+        while(true) {
+            if(isset($this->rowOther['sc-row'.$rowNum.'-type'])) {
+                echo "<tr>
+                      <td><input    type='text' 
+                                    name='sc-row" . $rowNum . "-type' 
+                                    id='sc-row" . $rowNum . "-type' 
+                                    value='" . $this->rowOther['sc-row' . $rowNum . '-type'] . "' 
+                          />
+                      </td>
+                      <td><input    type='text' 
+                                    name='sc-row" . $rowNum . "-trade' 
+                                    id='sc-row" . $rowNum . "-trade' 
+                                    value='" . $this->rowOther['sc-row' . $rowNum . '-trade'] . "' 
+                          />
+                      </td>
+                      <td><input    type='text'
+                                    name='sc-row" . $rowNum . "-trade-email'
+                                    id='sc-row" . $rowNum . "-trade-email'
+                                    value='" . $this->rowOther['sc-row' . $rowNum . '-trade-email'] . "' 
+                          />
+                      </td>
+                      <td><input    type='text' 
+                                    name='sc-row" . $rowNum . "-dayIn'
+                                    id='sc-row" . $rowNum . "-dayIn'
+                                    value='" . $this->rowDayInDayOut[$rowNum . 'dayIn'] . "' 
+                          />
+                      </td>
+                      <td><input    type='text' 
+                                    name='sc-row" . $rowNum . "-dayOut' 
+                                    id='sc-row" . $rowNum . "-dayOut' 
+                                    value='" . $this->rowDayInDayOut[$rowNum . 'dayOut'] . "' 
+                          />
+                      </td>
+                      <td><textarea name='sc-row" . $rowNum . "-comments' 
+                                    id='sc-row" . $rowNum . "-comments' 
+                          >" . $this->rowOther['sc-row' . $rowNum . '-comments'] . "</textarea>
+                      </td>
+                    </tr>";
+
+                $rowNum++;
+            }
+            else {
+                break;
+            }
+        }
+
+        ?>
+
+
+
+    </table>
+
+        <input type="submit" value="Save" />
+
+    </form>
+
+
